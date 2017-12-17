@@ -1,6 +1,9 @@
 // Code goes here
 
-// genera un numero entre 1 y 5 generado de manera aleatoria y debe ser rendondiado
+// confirm
+// if select "OK" get true
+// if select "cancel" get false
+
 var friends = [];
 
 do {
