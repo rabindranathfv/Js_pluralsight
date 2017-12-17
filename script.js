@@ -6,7 +6,8 @@ var friends = [];
 do {
     var person = prompt("introduzca el nombre de su nuevo amigo");
     friends.push(person);
-} while (condition);
+    var finish = confirm("agregamos un nuevo amigo?")
+} while (finish);
 
 
 console.log("List of my friends");
