@@ -12,9 +12,12 @@ do {
     var finish = confirm("agregamos un nuevo amigo?")
 } while (finish);
 
+function friend_list(friends) {
+    console.log("List of my friends");
 
-console.log("List of my friends");
-
-for (let index = 0; index < friends.length; index++) {
-    console.log (friends[index]+ "\n");
+    for (let index = 0; index < friends.length; index++) {
+        console.log (friends[index]+ "\n");
+    }
 }
+   
+friend_list(friends);
