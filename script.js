@@ -1,19 +1,16 @@
 // Code goes here
 
 // genera un numero entre 1 y 5 generado de manera aleatoria y debe ser rendondiado
-var numRandom;
+var friends = [];
 
-for (let numRandom = 1; numRandom <= 100; numRandom++) {
-    console.log(numRandom);
-    if (numRandom % 3 === 0 ) {
-        if (numRandom % 5 === 0) {
-            console.log("fizzbuzz");
-        } else {
-            console.log("fizz");
-        }
-    } else if (numRandom % 5 === 0 ) {
-        console.log("buzz");
-    } else {
-        console.log("My number is " + numRandom);
-    }
+do {
+    var person = prompt("introduzca el nombre de su nuevo amigo");
+    friends.push(person);
+} while (condition);
+
+
+console.log("List of my friends");
+
+for (let index = 0; index < friends.length; index++) {
+    console.log (friends[index]+ "\n");
 }
