@@ -6,10 +6,8 @@ var numRandom;
 for (let numRandom = 1; numRandom <= 100; numRandom++) {
     console.log(numRandom);
     if (numRandom % 3 === 0 ) {
-        alert("fizz");
         console.log("fizz");
     } else if (numRandom % 5 === 0 ) {
-        alert("buzz");
         console.log("buzz");
     } else if (numRandom % 3 === 0 && numRandom % 5 === 0) {
         console.log("fizzbuzz");
