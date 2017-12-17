@@ -3,13 +3,14 @@
 // genera un numero entre 1 y 5 generado de manera aleatoria y debe ser rendondiado
 var numRandom;
 
-for (let index = 0; index < 100; index++) {
-    numRandom = Math.round( Math.random() * 5 );
+for (let numRandom = 1; numRandom <= 100; numRandom++) {
     console.log(numRandom);
-    if (numRandom % 3 === 0 && numRandom != 0) {
+    if (numRandom % 3 === 0 ) {
         alert("fizz");
+        console.log("fizz");
     } else if (numRandom % 5 === 0 ) {
         alert("buzz");
+        console.log("buzz");
     } else {
         console.log("My number is " + numRandom);
     }
