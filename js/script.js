@@ -23,10 +23,10 @@ function fightZombie(lifePoints) {
     alert("You are fighting for your life!");
     probability = Math.random();
     if ( probability >= 0.6 ) {
-        alert("you win the battle this time");
+        
         return lifePoints - 1;
     } else {
-        alert("you loose the battle this time");
+
         return lifePoints;
     }
 }
@@ -68,10 +68,10 @@ function zombieGame(lifeP,zombie_death,weapon,tZombie,Scenarios) {
         alert("finding the exit");
         battle(weapon,tZombie);
         if (fightZombie(lifeP) === lifeP) {
-            alert("you win this fight");
+            alert("you win the battle this time");
         } else {
-            alert("you are loosing force");
             lifeP--;
+            alert("you loose the battle this time");
         }
         
     } while (endGame(zombie_death,lifeP));
