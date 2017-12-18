@@ -40,16 +40,16 @@ function Alive(lifePoints) {
         alert("you are dead");
         return false;
     } else {
-        alert("you are alive");
+        alert("you are Alive");
         return true;
     }
 }
 
-function endGame(num_zombie) {
-    if (num_zombie === 5) {
-        return true;
-    } else {
+function endGame(num_zombie,points) {
+    if (num_zombie === 5 && Alive(points)) {
         return false;
+    } else {
+        return true;
     }
 }
 
@@ -69,14 +69,12 @@ function zombieGame(lifeP,zombie_death,weapon,tZombie,Scenarios) {
         battle(weapon,tZombie);
         if (fightZombie(lifeP) === lifeP) {
             alert("you win this fight");
-            Alive(lifeP);
         } else {
             alert("you are loosing force");
             lifeP--;
-            Alive(lifeP);
         }
         
-    } while (endGame(zombie_death));
+    } while (endGame(zombie_death,lifeP));
 
     alert("You win the game");
     return true;
