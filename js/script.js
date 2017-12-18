@@ -32,29 +32,35 @@ function fightZombie(lifePoints) {
 }
 
 function battle(weapons,zombies) {
-    alert("you weapon for fight is " + random_weapon(weapons) + " and the type of zombie is " + random_zombie(zombies) + "Prepare for battle ");
+    alert("you weapon for fight is " + random_weapon(weapons) + " and the type of zombie is " + random_zombie(zombies) + " Prepare for battle ");
 }
 
 function Alive(lifePoints) {
-    if (lifePoints === 0) {
-        alert("you are dead");
+    if (lifePoints <= 0) {
+        alert("you are dead and you loose the game");
         return false;
     } else {
-        alert("you are Alive");
         return true;
     }
 }
 
 function endGame(num_zombie,points) {
-    if (num_zombie === 5 && Alive(points)) {
-        return false;
-    } else {
-        return true;
+    if (num_zombie === 5 ) {
+        if (Alive(points)) {
+            //termino el juego vivo
+            return false;
+        } else {
+            //termino el juego pero murio
+            return true;
+        }
+    } else if (num_zombie > 2 && num_zombie <=4) {
+        alert("you almost done to kill all the zombies");
     }
 }
 
 function statusGame(lifeP,zombie_death) {
-    alert("your have " + lifeP + " LifePoints" + "and you has been kill the amount of " + zombie_death);
+    alert("your have " + lifeP + " LifePoints" + " and you has been kill the amount of " + zombie_death);
+    Alive(lifeP);
 }
 // MAIN FUNCTION
 
@@ -79,7 +85,7 @@ function zombieGame(lifeP,zombie_death,weapon,tZombie,Scenarios) {
         statusGame(lifeP,zombie_death);
     } while (endGame(zombie_death,lifeP));
 
-    alert("You win the game");
+    alert("You win the game " + player_name);
     return true;
 }
 
