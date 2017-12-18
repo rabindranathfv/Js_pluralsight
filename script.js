@@ -1,17 +1,23 @@
 // Code goes here
 
-// genera un numero entre 1 y 5 generado de manera aleatoria y debe ser rendondiado
-var randomNUmber = Math.round( Math.random() * 15 );
-//var randomNUmber = 15;
+// confirm
+// if select "OK" get true
+// if select "cancel" get false
 
-if (randomNUmber % 3 === 0 && randomNUmber != 0 ) {
-    if (randomNUmber % 5 === 0) {
-        alert("fizzbuzz");
-    } else {
-        alert("fizz");
+var friends = [];
+
+do {
+    var person = prompt("introduzca el nombre de su nuevo amigo");
+    friends.push(person);
+    var finish = confirm("agregamos un nuevo amigo?")
+} while (finish);
+
+function friend_list(friends) {
+    console.log("List of my friends");
+
+    for (let index = 0; index < friends.length; index++) {
+        console.log (friends[index]+ "\n");
     }
-} else if (randomNUmber % 5 === 0 && randomNUmber != 0 ) {
-    alert("buzz");
-} else {
-    alert("the random number is  " + randomNUmber );
 }
+   
+friend_list(friends);
