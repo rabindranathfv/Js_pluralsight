@@ -53,7 +53,9 @@ function endGame(num_zombie,points) {
     }
 }
 
-
+function statusGame(lifeP,zombie_death) {
+    alert("your have " + lifeP + " LifePoints" + "and you has been kill the amount of " + zombie_death);
+}
 // MAIN FUNCTION
 
 function zombieGame(lifeP,zombie_death,weapon,tZombie,Scenarios) {
@@ -61,7 +63,7 @@ function zombieGame(lifeP,zombie_death,weapon,tZombie,Scenarios) {
     alert("The zombie game begins");
     var player_name = prompt("Introduzca su nombre");
     alert("Start with " + lifeP + " points of life" );
-    alert("Try to survive in " + Scenarios[randomNumber(Scenarios.length - 1)]);
+    alert("Try to survive in The " + Scenarios[randomNumber(Scenarios.length - 1)]);
     alert("your mission is kill 5 zombies to win");
     
     do {
@@ -69,11 +71,12 @@ function zombieGame(lifeP,zombie_death,weapon,tZombie,Scenarios) {
         battle(weapon,tZombie);
         if (fightZombie(lifeP) === lifeP) {
             alert("you win the battle this time");
+            zombie_death++;
         } else {
             lifeP--;
             alert("you loose the battle this time");
         }
-        
+        statusGame(lifeP,zombie_death)
     } while (endGame(zombie_death,lifeP));
 
     alert("You win the game");
