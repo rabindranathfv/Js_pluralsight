@@ -76,7 +76,7 @@ function zombieGame(lifeP,zombie_death,weapon,tZombie,Scenarios) {
             lifeP--;
             alert("you loose the battle this time");
         }
-        statusGame(lifeP,zombie_death)
+        statusGame(lifeP,zombie_death);
     } while (endGame(zombie_death,lifeP));
 
     alert("You win the game");
