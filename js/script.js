@@ -22,7 +22,7 @@ function random_zombie(zombie) {
 function fightZombie(lifePoints) {
     alert("You are fighting for your life!");
     probability = Math.random();
-    if ( probability >= 0.4 ) {
+    if ( probability >= 0.6 ) {
         alert("you win the battle this time");
         return lifePoints - 1;
     } else {
@@ -56,19 +56,25 @@ function endGame(num_zombie) {
 
 // MAIN FUNCTION
 
-function zombieGame(lifePoints,zombie_death,weapon,tZombie,Scenarios) {
+function zombieGame(lifeP,zombie_death,weapon,tZombie,Scenarios) {
     
     alert("The zombie game begins");
     var player_name = prompt("Introduzca su nombre");
-    alert("Start with " + lifePoints + " points of life" );
+    alert("Start with " + lifeP + " points of life" );
     alert("Try to survive in " + Scenarios[randomNumber(Scenarios.length - 1)]);
     alert("your mission is kill 5 zombies to win");
     
     do {
         alert("finding the exit");
-        battle();
-        fightZombie();
-        Alive();
+        battle(weapon,tZombie);
+        if (fightZombie(lifeP) === lifeP) {
+            alert("you win this fight");
+            Alive(lifeP);
+        } else {
+            alert("you are loosing force");
+            lifeP--;
+            Alive(lifeP);
+        }
         
     } while (endGame(zombie_death));
 
