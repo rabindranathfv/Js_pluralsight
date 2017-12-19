@@ -1,9 +1,51 @@
 // zombie game
-var lifePoints = randomNumber(5);
+var lifePoints = randomNumber(10);
 var beginScenarios = ["hospital","school","highway","house","apartarment"];
 var listWeapons = ["gun","bow","bomb","knife","axe","nuclear bomb"];
 var typeZombie = ["litle zombie","dog zombie","cat zombie","snake zombie"];
 
+var Zombie = class {
+    constructor(name,tyzombie,lifeZ){
+        this.name = name;
+        this.tyzombie = tyzombie;
+        this.lifeZ = lifeZ;
+    }
+        // getter
+    get name(){
+        return this.zombie_name();
+    }
+        //method
+    zombie_name(){
+        return this.name;
+    }
+
+      // getter
+    get typzombie(){
+        return this.type_zombie();
+    }
+            //method
+    type_zombie(){
+        return this.tyzombie;
+    }
+
+            // getter
+    get zombielife{
+        return this.zombie_life_points();
+    }
+        //method
+    zombie_life_points(){
+        return this.lifeZ;
+    }
+
+        // getter
+    get update_lifeZ(){
+        return this.update_zombie_lifeZ();
+    }
+            //method
+    update_zombie_lifeZ(){
+        return this.lifeZ - 1;
+    }
+};
 
 // FUNCTIONS IN GAME 
 
@@ -22,12 +64,12 @@ function random_zombie(zombie) {
 function fightZombie(lifePoints) {
     alert("You are fighting for your life!");
     probability = Math.random();
-    if ( probability >= 0.6 ) {
+    if ( probability >= 0.4 ) {
         
-        return lifePoints - 1;
+        return lifePoints;
     } else {
 
-        return lifePoints;
+        return lifePoints -1;
     }
 }
 
