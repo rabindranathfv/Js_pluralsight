@@ -226,4 +226,5 @@ for (let index = 0; index < 5; index++) {
     var zomb = new Zombie( zomb_name,z,lpz,1);
     list_zombies.push(zomb);
 }
+
 zombieGame(plyr,list_zombies,lifePoints,0,listWeapons,typeZombie,beginScenarios);
