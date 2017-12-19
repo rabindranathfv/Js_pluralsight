@@ -160,7 +160,7 @@ function battle(player,weapons,tzombies,list_zomb,lifeP,zombie_death) {
         Alert("Status of the Game");
         statusGame(player.player_points,zombie_death);
 
-    } while (Alive(player.lifeP) && Alive(lp_zomb));
+    } while (Alive(player.player_points) && Alive(lp_zomb));
         
 }
 
