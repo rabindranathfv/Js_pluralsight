@@ -5,10 +5,11 @@ var listWeapons = ["gun","bow","bomb","knife","axe","nuclear bomb"];
 var typeZombie = ["litle zombie","dog zombie","cat zombie","snake zombie"];
 
 var Zombie = class {
-    constructor(name,tyzombie,lifeZ){
+    constructor(name,tyzombie,lifeZ,status){
         this.name = name;
         this.tyzombie = tyzombie;
         this.lifeZ = lifeZ;
+        this.status = status;
     }
         // getter
     get name(){
@@ -35,6 +36,15 @@ var Zombie = class {
         //method
     zombie_life_points(){
         return this.lifeZ;
+    }
+
+        // getter
+    get zombieL(){
+        return this.zombie_alive();
+    }
+            //method
+    zombie_alive(){
+        return this.status;
     }
 
         // getter
