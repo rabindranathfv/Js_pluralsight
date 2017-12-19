@@ -144,7 +144,7 @@ function battle(player,weapons,tzombies,list_zomb,lifeP,zombie_death) {
         var lp_zomb;
         for (let index = 0; index < list_zomb.length; index++) {
             // pelea vs cada Zombie
-            if (fightZombie(list_zomb[index].lifeP) === lifeP) {
+            if (fightZombie(list_zomb[index].zombiePoints) === lifeP) {
                 alert("you win the battle this time");
                 zombie_death++;
             } else {
@@ -154,11 +154,11 @@ function battle(player,weapons,tzombies,list_zomb,lifeP,zombie_death) {
             }
             // trayendo los puntos de vida del zombie
             if (list_zomb[index].typeZombie === t_zomb) {
-                lp_zomb = list_zomb[index].lifeZ;
+                lp_zomb = list_zomb[index].zombiePoints;
             }            
         }
         Alert("Status of the Game");
-        statusGame(player.lifeP,zombie_death);
+        statusGame(player.player_points,zombie_death);
 
     } while (Alive(player.lifeP) && Alive(lp_zomb));
         
@@ -187,14 +187,14 @@ function statusGame(lifeP,zombie_death) {
 
 function zombieGame(Player,list_Zombies,lifeP,zombie_death,weapon,tZombie,Scenarios) {
 
-    alert("Start with " + Player.lifeP + " points of life" );
+    alert("Start with " + Player.player_points + " points of life" );
     alert("Try to survive in The " + Scenarios[randomNumber(Scenarios.length - 1)]);
     alert("your mission is kill 5 zombies to win");
     
     do {
         alert("finding the exit");
-        battle(Player,weapon,tZombie,list_zombies,Player.lifeP,zombie_death);
-    } while (endGame(zombie_death,Player.lifeP));
+        battle(Player,weapon,tZombie,list_zombies,Player.player_points,zombie_death);
+    } while (endGame(zombie_death,Player.player_points));
 
     alert("You win the game " + Player.player_name);
     return true;
