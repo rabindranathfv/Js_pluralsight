@@ -58,7 +58,7 @@ class Zombie {
     }
 }
 
-var Player = class {
+class Player{
     constructor(name,lifeP,status){
         this._name = name;
         this._lifeP = lifeP;
