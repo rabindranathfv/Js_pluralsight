@@ -3,6 +3,7 @@ var lifePoints = randomNumber(10);
 var beginScenarios = ["hospital","school","highway","house","apartarment"];
 var listWeapons = ["gun","bow","bomb","knife","axe","nuclear bomb"];
 var typeZombie = ["litle zombie","dog zombie","cat zombie","snake zombie"];
+// litle zombie max 2 de vida, dog zombie 4, cat zombie 3, snake zombie 5
 
 var Zombie = class {
     constructor(name,tyzombie,lifeZ,status){
@@ -21,7 +22,7 @@ var Zombie = class {
     }
 
       // getter
-    get typzombie(){
+    get typZombie(){
         return this.type_zombie();
     }
             //method
@@ -30,7 +31,7 @@ var Zombie = class {
     }
 
             // getter
-    get zombielife{
+    get zombiePoints(){
         return this.zombie_life_points();
     }
         //method
@@ -39,7 +40,7 @@ var Zombie = class {
     }
 
         // getter
-    get zombieL(){
+    get zombie_life(){
         return this.zombie_alive();
     }
             //method
@@ -54,6 +55,49 @@ var Zombie = class {
             //method
     update_zombie_lifeZ(){
         return this.lifeZ - 1;
+    }
+};
+
+var Player = class {
+    constructor(name,lifeP,status){
+        this.name = name;
+        this.lifeP = lifeP;
+        this.status = status;
+    }
+        // getter
+    get player_name(){
+        return this.p_name();
+    }
+        //method
+    p_name(){
+        return this.name;
+    }
+
+            // getter
+    get player_points(){
+        return this.player_life_points();
+    }
+        //method
+    player_life_points(){
+        return this.lifeZ;
+    }
+
+        // getter
+    get player_alife(){
+        return this.p_alive();
+    }
+            //method
+    p_alive(){
+        return this.status;
+    }
+
+        // getter
+    get update_lifeP(){
+        return this.update_player_lifeP();
+    }
+            //method
+    update_player_lifeP(){
+        return this.lifeP - 1;
     }
 };
 
