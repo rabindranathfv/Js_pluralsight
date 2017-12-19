@@ -136,7 +136,7 @@ function Alive(lifePoints) {
     }
 }
 
-function battle(player,weapons,tzombies,list_zomb) {
+function battle(player,weapons,tzombies,list_zomb,lifeP) {
     do {
         ran_weapon = random_weapon(weapons);
         t_zomb = random_zombie(tzombies);
@@ -182,24 +182,26 @@ function statusGame(lifeP,zombie_death) {
 // MAIN FUNCTION
 
 function zombieGame(Player,list_Zombies,lifeP,zombie_death,weapon,tZombie,Scenarios) {
-    
-    
-    
-    alert("Start with " + lifeP + " points of life" );
+
+    alert("Start with " + Player.lifeP + " points of life" );
     alert("Try to survive in The " + Scenarios[randomNumber(Scenarios.length - 1)]);
     alert("your mission is kill 5 zombies to win");
     
     do {
         alert("finding the exit");
-        battle(Player,weapon,tZombie,list_zombies);
+        battle(Player,weapon,tZombie,list_zombies,Player.lifeP);
         
-        statusGame(lifeP,zombie_death);
-    } while (endGame(zombie_death,lifeP));
+        statusGame(player_name.lifeP,zombie_death);
+    } while (endGame(zombie_death,Player.lifeP));
 
-    alert("You win the game " + player_name);
+    alert("You win the game " + Player.player_name);
     return true;
 }
 
+
+/////////////////////
+/////////////////////
+/////////////////////
 alert("The zombie game begins");
 var player_name = prompt("Introduzca su nombre");
 plyr = new Player(player_name,lifePoints,1);
