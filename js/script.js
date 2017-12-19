@@ -5,12 +5,12 @@ var listWeapons = ["gun","bow","bomb","knife","axe","nuclear bomb"];
 var typeZombie = ["litle zombie","dog zombie","cat zombie","snake zombie"];
 // litle zombie max 2 de vida, dog zombie 4, cat zombie 3, snake zombie 5
 
-var Zombie = class {
+class Zombie {
     constructor(name,tyzombie,lifeZ,status){
-        this.name = name;
-        this.tyzombie = tyzombie;
-        this.lifeZ = lifeZ;
-        this.status = status;
+        this._name = name;
+        this._tyzombie = tyzombie;
+        this._lifeZ = lifeZ;
+        this._status = status;
     }
         // getter
     get name(){
@@ -56,13 +56,13 @@ var Zombie = class {
     update_zombie_lifeZ(){
         return this.lifeZ - 1;
     }
-};
+}
 
 var Player = class {
     constructor(name,lifeP,status){
-        this.name = name;
-        this.lifeP = lifeP;
-        this.status = status;
+        this._name = name;
+        this._lifeP = lifeP;
+        this._status = status;
     }
         // getter
     get player_name(){
