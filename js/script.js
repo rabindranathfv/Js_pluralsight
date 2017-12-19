@@ -222,7 +222,8 @@ for (let index = 0; index < 5; index++) {
         // shnake zombie
         lpz = 5;
     }
-    zomb = new Zombie( z + " of the Valley",z,lpz,1);
+    var zomb_name = z + " of the Valley"; 
+    var zomb = new Zombie( zomb_name,z,lpz,1);
     list_zombies.push(zomb);
 }
 zombieGame(plyr,list_zombies,lifePoints,0,listWeapons,typeZombie,beginScenarios);
