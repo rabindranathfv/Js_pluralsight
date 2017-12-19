@@ -127,8 +127,11 @@ function fightZombie(lifePoints) {
     }
 }
 
-function battle(weapons,zombies) {
-    alert("you weapon for fight is " + random_weapon(weapons) + " and the type of zombie is " + random_zombie(zombies) + " Prepare for battle ");
+function battle(player,weapons,tzombies,list_zomb) {
+    do {
+        alert("you weapon for fight is " + random_weapon(weapons) + " and the type of zombie is " + random_zombie(tzombies) + " Prepare for battle ");  
+    } while ();
+        
 }
 
 function Alive(lifePoints) {
@@ -160,7 +163,7 @@ function statusGame(lifeP,zombie_death) {
 }
 // MAIN FUNCTION
 
-function zombieGame(Player,Zombies,lifeP,zombie_death,weapon,tZombie,Scenarios) {
+function zombieGame(Player,list_Zombies,lifeP,zombie_death,weapon,tZombie,Scenarios) {
     
     
     
@@ -170,7 +173,7 @@ function zombieGame(Player,Zombies,lifeP,zombie_death,weapon,tZombie,Scenarios) 
     
     do {
         alert("finding the exit");
-        battle(weapon,tZombie);
+        battle(Player,weapon,tZombie,list_zombies);
         if (fightZombie(lifeP) === lifeP) {
             alert("you win the battle this time");
             zombie_death++;
@@ -187,13 +190,25 @@ function zombieGame(Player,Zombies,lifeP,zombie_death,weapon,tZombie,Scenarios) 
 
 alert("The zombie game begins");
 var player_name = prompt("Introduzca su nombre");
-plyr = new Player();
+plyr = new Player(player_name,lifePoints,1);
 
 // generating list of zombies
 alert("Generating all the Zombies");
 list_zombies = [];
 for (let index = 0; index < 5; index++) {
-    zomb = new Zombie(,,,);
+    var z = typeZombie[randomNumber(3)];
+    var lpz = 0;
+    if ( z === "litle zombie") {
+        lpz = 2;
+    } else if ( z === "cat zombie"){
+        lpz = 3;
+    } else if ( z === "dog zombie") {
+        lpz = 4;
+    } else {
+        // shnake zombie
+        lpz = 5;
+    }
+    zomb = new Zombie( z + " of the Valley",z,lpz,1);
     list_zombies.push(zomb);
 }
-zombieGame(plyr,zomb,lifePoints,0,listWeapons,typeZombie,beginScenarios);
+zombieGame(plyr,list_zombies,lifePoints,0,listWeapons,typeZombie,beginScenarios);
