@@ -160,10 +160,10 @@ function statusGame(lifeP,zombie_death) {
 }
 // MAIN FUNCTION
 
-function zombieGame(lifeP,zombie_death,weapon,tZombie,Scenarios) {
+function zombieGame(Player,Zombies,lifeP,zombie_death,weapon,tZombie,Scenarios) {
     
-    alert("The zombie game begins");
-    var player_name = prompt("Introduzca su nombre");
+    
+    
     alert("Start with " + lifeP + " points of life" );
     alert("Try to survive in The " + Scenarios[randomNumber(Scenarios.length - 1)]);
     alert("your mission is kill 5 zombies to win");
@@ -185,4 +185,15 @@ function zombieGame(lifeP,zombie_death,weapon,tZombie,Scenarios) {
     return true;
 }
 
-zombieGame(lifePoints,0,listWeapons,typeZombie,beginScenarios);
+alert("The zombie game begins");
+var player_name = prompt("Introduzca su nombre");
+plyr = new Player();
+
+// generating list of zombies
+alert("Generating all the Zombies");
+list_zombies = [];
+for (let index = 0; index < 5; index++) {
+    zomb = new Zombie(,,,);
+    list_zombies.push(zomb);
+}
+zombieGame(plyr,zomb,lifePoints,0,listWeapons,typeZombie,beginScenarios);
