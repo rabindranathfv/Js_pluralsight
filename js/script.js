@@ -157,6 +157,9 @@ function battle(player,weapons,tzombies,list_zomb,lifeP,zombie_death) {
                 lp_zomb = list_zomb[index].lifeZ;
             }            
         }
+        Alert("Status of the Game");
+        statusGame(player.lifeP,zombie_death);
+
     } while (Alive(player.lifeP) && Alive(lp_zomb));
         
 }
@@ -191,7 +194,6 @@ function zombieGame(Player,list_Zombies,lifeP,zombie_death,weapon,tZombie,Scenar
     do {
         alert("finding the exit");
         battle(Player,weapon,tZombie,list_zombies,Player.lifeP,zombie_death);
-        statusGame(player_name.lifeP,zombie_death);
     } while (endGame(zombie_death,Player.lifeP));
 
     alert("You win the game " + Player.player_name);
