@@ -127,6 +127,15 @@ function fightZombie(lifePoints) {
     }
 }
 
+function Alive(lifePoints) {
+    if (lifePoints <= 0) {
+        alert("you are dead and you loose the game");
+        return false;
+    } else {
+        return true;
+    }
+}
+
 function battle(player,weapons,tzombies,list_zomb) {
     do {
         ran_weapon = random_weapon(weapons);
@@ -151,14 +160,6 @@ function battle(player,weapons,tzombies,list_zomb) {
         
 }
 
-function Alive(lifePoints) {
-    if (lifePoints <= 0) {
-        alert("you are dead and you loose the game");
-        return false;
-    } else {
-        return true;
-    }
-}
 
 function endGame(num_zombie,points) {
     if (num_zombie === 5 ) {
