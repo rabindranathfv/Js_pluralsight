@@ -136,12 +136,12 @@ function Alive(lifePoints) {
     }
 }
 
-function battle(player,weapons,tzombies,list_zomb,lifeP) {
+function battle(player,weapons,tzombies,list_zomb,lifeP,zombie_death) {
     do {
         ran_weapon = random_weapon(weapons);
         t_zomb = random_zombie(tzombies);
         alert("you weapon for fight is " + ran_weapon + " and the type of zombie is " + t_zomb + " Prepare for battle ");  
-        lp_zomb;
+        var lp_zomb;
         for (let index = 0; index < list_zomb.length; index++) {
             // pelea vs cada Zombie
             if (fightZombie(list_zomb[index].lifeP) === lifeP) {
@@ -149,9 +149,10 @@ function battle(player,weapons,tzombies,list_zomb,lifeP) {
                 zombie_death++;
             } else {
                 lifeP--;
+                player.update_lifeP;
                 alert("you loose the battle this time")
             }
-
+            // trayendo los puntos de vida del zombie
             if (list_zomb[index].typeZombie === t_zomb) {
                 lp_zomb = list_zomb[index].lifeZ;
             }            
@@ -189,8 +190,7 @@ function zombieGame(Player,list_Zombies,lifeP,zombie_death,weapon,tZombie,Scenar
     
     do {
         alert("finding the exit");
-        battle(Player,weapon,tZombie,list_zombies,Player.lifeP);
-        
+        battle(Player,weapon,tZombie,list_zombies,Player.lifeP,zombie_death);
         statusGame(player_name.lifeP,zombie_death);
     } while (endGame(zombie_death,Player.lifeP));
 
