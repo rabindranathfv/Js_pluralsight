@@ -229,4 +229,4 @@ for (let index = 0; index < 5; index++) {
     list_zombies.push(zomb);
 }
 
-zombieGame(plyr,list_zombies,lifePoints,0,listWeapons,typeZombie,beginScenarios);
+zombieGame(plyr,list_zombies,plyr.player_points,0,listWeapons,typeZombie,beginScenarios);
