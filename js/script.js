@@ -22,11 +22,11 @@ var Zombie = class {
     }
 
       // getter
-    get typZombie(){
-        return this.type_zombie();
+    get typeZombie(){
+        return this.typ_zombie();
     }
             //method
-    type_zombie(){
+    typ_zombie(){
         return this.tyzombie;
     }
 
@@ -119,18 +119,35 @@ function fightZombie(lifePoints) {
     alert("You are fighting for your life!");
     probability = Math.random();
     if ( probability >= 0.4 ) {
-        
+        // gano
         return lifePoints;
     } else {
-
+        // perdio
         return lifePoints -1;
     }
 }
 
 function battle(player,weapons,tzombies,list_zomb) {
     do {
-        alert("you weapon for fight is " + random_weapon(weapons) + " and the type of zombie is " + random_zombie(tzombies) + " Prepare for battle ");  
-    } while ();
+        ran_weapon = random_weapon(weapons);
+        t_zomb = random_zombie(tzombies);
+        alert("you weapon for fight is " + ran_weapon + " and the type of zombie is " + t_zomb + " Prepare for battle ");  
+        lp_zomb;
+        for (let index = 0; index < list_zomb.length; index++) {
+            // pelea vs cada Zombie
+            if (fightZombie(list_zomb[index].lifeP) === lifeP) {
+                alert("you win the battle this time");
+                zombie_death++;
+            } else {
+                lifeP--;
+                alert("you loose the battle this time")
+            }
+
+            if (list_zomb[index].typeZombie === t_zomb) {
+                lp_zomb = list_zomb[index].lifeZ;
+            }            
+        }
+    } while (Alive(player.lifeP) && Alive(lp_zomb));
         
 }
 
@@ -174,13 +191,7 @@ function zombieGame(Player,list_Zombies,lifeP,zombie_death,weapon,tZombie,Scenar
     do {
         alert("finding the exit");
         battle(Player,weapon,tZombie,list_zombies);
-        if (fightZombie(lifeP) === lifeP) {
-            alert("you win the battle this time");
-            zombie_death++;
-        } else {
-            lifeP--;
-            alert("you loose the battle this time");
-        }
+        
         statusGame(lifeP,zombie_death);
     } while (endGame(zombie_death,lifeP));
 
