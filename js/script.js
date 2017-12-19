@@ -79,7 +79,7 @@ class Player{
     }
         //method
     player_life_points(){
-        return this.lifeZ;
+        return this.lifeP;
     }
 
         // getter
