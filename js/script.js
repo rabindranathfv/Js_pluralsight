@@ -48,7 +48,10 @@ function display() {
 
   // Js class with literals
 
+var rabin1 = { name: "Rabindranath",lastname: "Ferreira", age: 27}
 
+rabin1.country = "Chile";
+display(rabin1)
 
 //var rabin = new Person();
 
@@ -61,6 +64,6 @@ function Person2(name,lastname,age) {
     this.age = age;
 }
 
-var rabin = new Person2("Rabindranath","ferreira",21)
+var rabin2 = new Person2("Rabindranath","ferreira",27)
 
-display(rabin)
+display(rabin2)
