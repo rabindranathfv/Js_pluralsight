@@ -90,4 +90,26 @@ var rabin3 = Object.create(Object.prototype,
     } 
   })
 
-display(rabin3)
+//display(rabin3)
+
+
+// class with constructor method
+
+class Person4 {
+  constructor(name,age, country){
+    this.name = name;
+    this.age = age;
+    this.country = country;
+  }
+
+    //method
+  Say_hello()  {
+    display('HOLA HOLA HOLA');
+    alert(this.name);
+  }
+}
+
+var rabin4 = new Person4('Rabindranath', 27, 'Chile');
+
+display(rabin4);
+rabin4.Say_hello();
