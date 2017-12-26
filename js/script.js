@@ -93,7 +93,7 @@ var rabin3 = Object.create(Object.prototype,
 //display(rabin3)
 
 
-// class with constructor method
+// class with constructor method, ES6 Class
 
 class Person4 {
   constructor(name,age, country){
@@ -105,6 +105,7 @@ class Person4 {
     //method
   Say_hello()  {
     display('HOLA HOLA HOLA');
+    // using atributte
     alert(this.name);
   }
 }
