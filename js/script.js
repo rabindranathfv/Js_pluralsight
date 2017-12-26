@@ -67,3 +67,23 @@ function Person2(name,lastname,age) {
 var rabin2 = new Person2("Rabindranath","ferreira",27)
 
 display(rabin2)
+
+// Using create object and prototype
+
+var rabin3 = Object.create(Object.prototype,
+  {
+    name : {
+      value : 'Rabin',
+      enumerable : true,
+      writable : true,
+      configurable : true
+    },
+    color : {
+      value : 'blanco',
+      enumerable : true,
+      writable : true,
+      configurable : true
+    } 
+  })
+
+display(rabin3)
