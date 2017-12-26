@@ -51,7 +51,7 @@ function display() {
 var rabin1 = { name: "Rabindranath",lastname: "Ferreira", age: 27}
 
 rabin1.country = "Chile";
-display(rabin1)
+//display(rabin1)
 
 //var rabin = new Person();
 
@@ -64,9 +64,13 @@ function Person2(name,lastname,age) {
     this.age = age;
 }
 
+/*
+
 var rabin2 = new Person2("Rabindranath","ferreira",27)
 
 display(rabin2)
+*/
+
 
 // Using create object and prototype
 
