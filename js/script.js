@@ -109,8 +109,35 @@ class Person4 {
     alert(this.name);
   }
 }
-
+/*
 var rabin4 = new Person4('Rabindranath', 27, 'Chile');
 
 display(rabin4);
 rabin4.Say_hello();
+
+*/
+
+// Inhererit - Herencia
+
+class Animal {
+  constructor(voice){
+    this.voice = voice || 'Grunt'
+  }
+
+  speak(){
+    display(this.voice)
+  }
+}
+
+// Cat is the Song of Animal, and he inherit all methods from animal
+class Cat extends Animal{
+  constructor(name,color){
+    super('Meow')
+    this.name = name
+    this.color = color
+  }
+}
+
+var litleCat = new Cat('TW','Green');
+// using a method of the father
+litleCat.speak();
