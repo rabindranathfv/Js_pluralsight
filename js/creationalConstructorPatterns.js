@@ -36,6 +36,8 @@ Task.prototype.save = function () {
 
 // Class EC6
 
+// las clases y sus metodos se implementan x usando el className.prototype.method y el constructor as a function...it is the same
+
 class Task {
     constructor(name){
     this.name = name;
