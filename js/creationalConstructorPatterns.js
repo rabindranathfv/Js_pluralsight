@@ -6,12 +6,28 @@ var Task = function (name) {
     this.completed = false;
 
     this.complete = function(){
+        console.log("complete task " + this.name);
         this.completed = true;
     }
 
     this.save = function () {
         console.log("saving task " + this.name);
     }
+}
+
+//using prototype
+
+// ClassName.prototype.method = function(){
+//      body
+//  }
+
+Task.prototype.complete = function () {
+    console.log("complete task " + this.name);
+        this.completed = true;
+}
+
+Task.prototype.save = function () {
+    console.log("saving task " + this.name);
 }
 
 // instancias
