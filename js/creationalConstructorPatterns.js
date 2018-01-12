@@ -1,6 +1,7 @@
-// do not use deprecated js code
+// do not use deprecated js code, and adding access to Ecmac script2015 for using class in JS
 'use strict';
 
+/*
 var Task = function (name) {
     this.name = name;
     this.completed = false;
@@ -15,12 +16,14 @@ var Task = function (name) {
     }
 }
 
+*/
 //using prototype
 
 // ClassName.prototype.method = function(){
 //      body
 //  }
 
+/*
 Task.prototype.complete = function () {
     console.log("complete task " + this.name);
         this.completed = true;
@@ -29,6 +32,29 @@ Task.prototype.complete = function () {
 Task.prototype.save = function () {
     console.log("saving task " + this.name);
 }
+*/
+
+// Class EC6
+
+class Task {
+    constructor(name){
+    this.name = name;
+    this.completed = false;
+    };
+
+    complete(){
+        console.log("complete task " + this.name);
+        this.completed = true;
+    };
+
+    save() {
+        console.log("saving task " + this.name);
+    };
+}
+
+
+
+
 
 // instancias
 var task1 = new Task("Create demo for constructors");
