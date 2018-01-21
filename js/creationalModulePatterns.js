@@ -28,3 +28,24 @@ var module = function() {
         }
     }
 }
+
+// better way to use
+
+var module = function() {
+    var privateVar = "data";
+    var test = {};
+
+    var get = function (data) {
+        // contenido
+    }
+
+    var save = function (data) {
+        // contenido
+    }
+
+    // return all methods with call function
+    return {
+        get: get,
+        save:save
+    }
+}
