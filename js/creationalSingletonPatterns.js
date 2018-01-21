@@ -9,7 +9,8 @@ var repo = function () {
 
     var save = function (task) {
         called++;
-        console.log('saving objet ' + task);
+        console.log('saving objet ' + task );
+        console.log('llamada '+ called);
     }
 
     console.log('new repo is up');
