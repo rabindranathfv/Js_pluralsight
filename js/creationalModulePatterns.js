@@ -16,6 +16,7 @@ var Name = function() {
 }
 */
 
+/*
 var module = function() {
     var privateVar = "data";
 
@@ -28,6 +29,7 @@ var module = function() {
         }
     }
 }
+*/
 
 // better way to use
 
