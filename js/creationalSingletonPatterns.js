@@ -7,9 +7,9 @@
 var repo = function () {
     var called = 0;
 
-    var save = function (task) {
+    var save = function () {
         called++;
-        console.log('saving objet ' + task );
+        console.log('saving objet ');
         console.log('llamada '+ called);
     }
 
@@ -22,12 +22,14 @@ var repo = function () {
 var my_repo = repo ();
 
 var taskHandler = function () {
+    var save_handler =function () {
+        my_repo.save('hi i am taskHandler saving this repo');
+    }
     return {
-        save: function () {
-            my_repo.save('hi i am taskHandler saving this repo');
-        }
+        save: save_handler
     }
 }
 
 var test_repo = repo('test object');
-taskHandler.save();
+test_repo.save
+test_repo.save_handler;
