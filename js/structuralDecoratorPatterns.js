@@ -53,5 +53,19 @@ var urgentTask_ut = function(name, priority) {
     this.priority = priority;
 }
 
+urgentTask_ut.prototype = Object.create(Task.prototype);
+
+urgentTask_ut.prototype.notify = function() {
+    console.log('Some important stuf');
+}
+
+urgentTask_ut.prototype.save = function() {
+    this.notify();
+    console.log('newest save version');
+    Task.prototype.save.call(this);
+}
+
+
 var ut = new urgentTask_ut('Urgent task Rework',1);
 console.log(ut);
+ut.save();
