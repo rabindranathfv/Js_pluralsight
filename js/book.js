@@ -3,11 +3,11 @@
 var Book = function (name,price){
     // sino se retorna nada, la funcion por si misma retornara undefined
     this.name = function (val) {
-        return this;
+        return name;
     };
 
     this.price = function (val) {
-        return this;
+        return price;
     };
 
     this.onPriceChanging = function (callback) {
