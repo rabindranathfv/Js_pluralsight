@@ -2,6 +2,9 @@
 
 var Book = function (name,price){
     // sino se retorna nada, la funcion por si misma retornara undefined
+    var priceChaging = [],
+        PriceChanged = [];
+
     this.name = function (val) {
         return name;
     };
@@ -23,8 +26,8 @@ var Book = function (name,price){
 
 var books = new Book('js methods as a functions', 24200);
 
-console.log('the name of the book is ' + books.name);
-console.log('the price of the book is $' + books.price);
+console.log('the name of the book is ' + books.name());
+console.log('the price of the book is $' + books.price());
 
 books.onPriceChanging(function (b,price) {
     if (price > 100) {
