@@ -3,13 +3,24 @@
 var Book = function (name,price){
     // sino se retorna nada, la funcion por si misma retornara undefined
     var priceChaging = [],
-        PriceChanged = [];
+        priceChanged = [];
 
     this.name = function (val) {
         return name;
     };
 
     this.price = function (val) {
+        if ( val !== undefined && val !== price ) {
+            for (let index = 0; index < priceChaging.length; index++) {
+                if (!priceChaging[index](this,val)) {
+                    return price;
+                }
+            }
+            price = val;
+            for (let index = 0; index < priceChanged.length; index++) {
+               priceChanged[index](this,val);
+            }
+        }
         return price;
     };
 
